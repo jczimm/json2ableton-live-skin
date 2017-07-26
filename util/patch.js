@@ -4,7 +4,7 @@ const patch = {
 	remove: Symbol('patch-remove'),
 	add: Symbol('patch-add'),
 
-	update(obj, update, defaultAdd) {
+	update(obj, update, getValueFn) {
 		const newObj = Object.assign({}, obj);
 		let newKey;
 		Object.getOwnPropertyNames(update).forEach((matchKey) => {
@@ -22,7 +22,7 @@ const patch = {
 			} else if (symbol === this.add) {
 				keys = update[symbol] || [];
 				keys.forEach((key) => {
-					newObj[key] = defaultAdd || undefined;
+					newObj[key] = getValueFn(key) || undefined;
 				});
 			} else {
 				newObj[symbol] = update[symbol];

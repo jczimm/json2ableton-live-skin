@@ -24,8 +24,14 @@ function migrateSkinMap(skin, { mode } = {}) {
   } else {
     throw 'Invalid `mode`. Expected \'upgrade\' or \'downgrade\'.';
   }
-  const newSkin = p.update(skin, update, [0, 0, 0, 255]);
 
+  const newSkin = p.update(skin, update, function value(key) {
+    if (mode === 'downgrade') {
+      if (key === 'SearchIndication') return [247, 191, 86, 255];
+      if (key === 'SearchIndicationStandby') return [237, 202, 137, 255];
+    }
+    return [0, 0, 0, 255];
+  });
   newSkin.format = (mode === 'upgrade' ? 'live9' : 'live8');
 
   return newSkin;
