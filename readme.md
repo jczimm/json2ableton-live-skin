@@ -45,6 +45,8 @@ See [examples/upgradeSkinMap.js](examples/upgradeSkinMap.js) for an example whic
 ## CLI
 
 ### ask2json
+
+Create a skin map (.json) from a skin file (.ask).
 ```
 Usage
   $ ask2json <source-file> [json-destination]
@@ -65,6 +67,8 @@ Examples
 ```
 
 ### json2ask
+
+Create a skin file (.ask) from a skin map (.json).
 ```
 Usage
   $ json2ask <source-file> [skin-destination]
@@ -87,6 +91,8 @@ Examples
 ```
 
 ### migrate-ask-json
+
+Migrate a skin file (.ask) or a skin map (.json) from/to Live 8 format to/from Live 9 format.
 ```
 Usage
   $ migrate-ask-json <source-file (.ask or .json)> <skin/json-destination>
