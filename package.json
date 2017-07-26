@@ -1,0 +1,32 @@
+{
+  "name": "json2ableton-live-skin",
+  "version": "0.0.1",
+  "description": "Tools for editing/creating Ableton Live 8/9 skin files using .json files.",
+  "main": "index.js",
+  "bin": {
+    "json2ask": "./bin/json2ask.js",
+    "ask2json": "./bin/ask2json.js",
+    "migrate-ask-json": "./bin/migrate-ask-json.js"
+  },
+  "dependencies": {
+    "color-string": "^1.5.2",
+    "parse-color": "^1.0.0",
+    "meow": "^3.7.0"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
+  },
+  "scripts": {
+    "test": "./__tests__/run.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jczimm/json2ableton-live-skin.git"
+  },
+  "author": "jczimm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jczimm/json2ableton-live-skin/issues"
+  },
+  "homepage": "https://github.com/jczimm/json2ableton-live-skin#readme"
+}

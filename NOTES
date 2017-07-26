@@ -1,0 +1,39 @@
+NOTES
+
+definitely make an electron app using this library to offer an alternative to the max for live plugin Skin Editor (by [pechmann])
+
+and post a link to the app's site with a download on /r/ableton :D
+
+don't wait too long... Live 10 might come soon and change the skin format.
+
+---
+labels:
+- skin file (.ask file or nodejs buffer of .ask data)
+- skin map (.json file)
+- skin (js object)
+---
+
+TODO:
+
+- Create tests in test/! (mocha? chai? what library should I use?)
+	- test the functions with bad data (bad colors, bad names) and add a handler for invalid JSON inputted
+	(create handlers for invalid arguments to functions)
+
+- Docs! (use JSDOC, then choose a docs generator)
+
+- create a binary that identifies the format of a jsonfile or an askfile
+jsonfile: if there is a "format" key, return its value; else, determine by the colornames
+askfile: read the letter ('w', 'v', or 't') - identify as "Live 9", "Live 8", or "W-Type"
+
+why are we able to parse W-type and not create again? (are we able to parse it correctly? -- maybe we should either allow w-type for both functions or for none)
+
+- find some way to have the help menus wrap to an indentation (so the right column wraps into the beginning of the column and not into the very left edge of the terminal)
+
+
+NOTES FOR README:
+
+- when using json2ask, json skin maps for Live 8-format skins that have "format": "live8" are understood as live8-format (and don't require --live8 flag);
+- (and when ask2json generates live8 files, they automatically have "format": "live8")
+
+
+[simple Table of Contents?]
